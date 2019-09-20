@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+    .v-leave-to,
+    .v-enter {
+        opacity: 0;
+    }
+
+    .v-enter-active,
+    .v-leave-active{
+      transition: all 0.4s ease;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="点击" @click="flag=!flag">
+        <transition>
+                <h1 v-if="flag">这是一个h1标签</h1>
+        </transition>
+        
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                flag:"true"
+            } ,
+            methods: {
+                
+            },
+        })
+    </script>
+</body>
+
+</html>

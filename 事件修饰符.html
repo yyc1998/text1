@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            border: 0px;
+        }
+
+        .outer {
+            width: 100%;
+            height: 100px;
+            background-color: red;
+
+        }
+
+        .inner {
+            width: 100%;
+            height: 500px;
+            background-color: yellow;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app inner" @click.self="btn3">
+        <div class="outer" @click.once="btn1">
+
+            <input type="button" value="点击" @click.stop="btn">
+            <a href="https://www.baidu.com/" @click.prevent="btn">baidu</a>
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: ".app",
+            data: {
+
+            },
+            methods: {
+                btn1() {
+                    console.log("1111")
+                },
+                btn() {
+                    console.log("按钮")
+                },
+                btn3() {
+                    console.log("3333")
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

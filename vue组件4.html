@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-cal></my-cal>
+    </div>
+
+<template id="my1">
+<div>
+    <h1>good</h1>
+    <h4>nice</h4>
+</div>
+</template>
+
+    <script>
+
+
+Vue.component("myCal",{
+    template:"#my1"
+    }
+)
+
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                
+            } ,
+            methods: {
+                
+            },
+        })
+    </script>
+</body>
+
+</html>
